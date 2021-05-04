@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<class name="com.mobicule.pojo.Company" table="company123">
+
+<id name="cId">
+<generator class="identity"></generator>
+</id>
+
+<property name="cName"></property>
+<property name="cAddress"></property>
+<property name="cEmail"></property>
+<property name="cDate"></property>
+<set name="departments" table="department123" cascade="all">
+<key column="cId"></key>
+<one-to-many class="com.mobicule.pojo.Department"/>
+</set>
+</class>
+</hibernate-mapping>
